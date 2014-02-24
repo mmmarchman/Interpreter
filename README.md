@@ -18,29 +18,27 @@ These data structures will then be interpreted to execute the program. All token
 The parsing algorithm should detect any syntactical or semantic error. The first such error discovered should cause an appropriate error message to be printed, and then the interpreter should terminate. Run-time errors should also be detected with appropriate error messages being printed.
 
 
-##Grammar:
-==========
+#Grammar
 
 
-# Parser Grammar 
+### Parser Grammar 
 
 The following is the syntax description for the parser written in [Backus-Naur Form](http://en.wikipedia.org/wiki/Backus%E2%80%93Naur_Form) or BNF.
 
-<program> -> program id <statementList> end program id
+```bash
+<program> → program id <statementList> end program id 
+<statementList> →  <statement> <statementList> | <statementList> 
+<statement> → <assignment_statement> | <print_statement> | <while_statement> | <if_statement> | <until_statement> 
+```
  
-<statementList> -> <div> <statement> <statementList> | <statementList> </div
-
-<statement> -> <div><assignment_statement> | <print_statement> | <while_statement> | <if_statement> | <until_statement> </div>
- 
- 
 
 
 
-# Lexical Analyzer Grammar
+### Lexical Analyzer Grammar
 
 Grammmar for Lexical Analyzer written in BNF.
 
-
+```bash
 id → letter
 
 literal_integer → digit literal_integer | digit
@@ -66,4 +64,5 @@ sub_operator → -
 mul_operator → *
 
 div_operator → /
+```
 
