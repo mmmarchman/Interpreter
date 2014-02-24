@@ -22,9 +22,10 @@ The parsing algorithm should detect any syntactical or semantic error. The first
 Grammar for the language
 
 Parser
-<program> → def <code_block> end 
+<program> → program id <statement> end program id
 
 <statement> → <assignment_statement> | <print_statement> | <while_statement> | <if_statement> | <until_statement>
+
 <if_statement> → if <boolean_expression> then <code_block> else <code_block> end 
 <while_statement> → while <boolean_expression> do <code_block> end 
 <assignment_statement> → id assignment_operator <expression>
